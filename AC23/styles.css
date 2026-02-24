@@ -1,0 +1,307 @@
+/* Reset y Variables - Tema azul oscuro unificado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul-oscuro: #0d2137;
+    --azul-oscuro-2: #132f4c;
+    --azul-oscuro-3: #1a3a5c;
+    --texto-claro: #c5d9ed;
+    --blanco: #e8f0f8;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--texto-claro);
+    background-color: var(--azul-oscuro);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+main .container.layout-dos-columnas {
+    max-width: none;
+    padding: 0 28px;
+}
+
+/* Cabecera - mismo azul oscuro */
+header {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 48px 0;
+    text-align: center;
+    box-shadow: var(--sombra);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.25rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Contenido Principal - dos columnas: video izquierda, texto derecha */
+main {
+    padding: 32px 0 48px;
+    min-height: calc(100vh - 280px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+main .container.layout-dos-columnas {
+    display: grid;
+    grid-template-columns: 52% 1fr;
+    grid-template-rows: auto auto;
+    max-width: none;
+    width: 100%;
+    gap: 28px;
+}
+
+main .layout-dos-columnas .content-left {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main .layout-dos-columnas .content-left .video-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+main .layout-dos-columnas .content-right {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Aspectos técnicos: toda la anchura de la página */
+main .layout-dos-columnas .technical-section-full {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+/* Descripción misma altura que el bloque del video (rellena la celda) */
+main .layout-dos-columnas .content-right .description-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+section {
+    background-color: var(--azul-oscuro-2);
+    padding: 32px 40px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--azul-oscuro-3);
+    width: 100%;
+}
+
+section h2 {
+    color: var(--blanco);
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--azul-oscuro-3);
+}
+
+section h3 {
+    color: var(--texto-claro);
+    font-size: 1.35rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+section h4 {
+    color: var(--texto-claro);
+    font-size: 1.1rem;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    opacity: 0.95;
+}
+
+section p {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+section ul {
+    margin-left: 28px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+section li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+/* Sección de Video - tamaño tipo YouTube, mismos colores */
+.video-section {
+    text-align: left;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    background-color: var(--azul-oscuro);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--azul-oscuro-3);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background-color: var(--azul-oscuro);
+}
+
+/* Sección Técnica */
+.technical-item {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--azul-oscuro-3);
+}
+
+.technical-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.technical-item strong {
+    color: var(--blanco);
+}
+
+/* Footer - mismo azul oscuro que el resto */
+footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 28px 0;
+    text-align: center;
+    margin-top: 0;
+    border-top: 1px solid var(--azul-oscuro-3);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    main .container.layout-dos-columnas {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    main .layout-dos-columnas .content-left {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    main .layout-dos-columnas .content-right {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    main .layout-dos-columnas .technical-section-full {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .video-section {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 36px 0;
+    }
+
+    header h1 {
+        font-size: 1.85rem;
+    }
+
+    header .subtitle {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 24px 0 36px;
+    }
+
+    main .container {
+        gap: 20px;
+    }
+
+    section {
+        padding: 24px 28px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section h3 {
+        font-size: 1.2rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 28px 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 20px 0 28px;
+    }
+
+    section {
+        padding: 20px 22px;
+    }
+}
